@@ -1,6 +1,6 @@
 all: docker-build
 
 docker-build:
-	docker build -t vagrant-sandbox .
+	docker build -t infimum-vagrant .
 docker-run:
-	docker run -it vagrant-sandbox bash
+	docker run -it infimum-vagrant /bin/sh

@@ -1,0 +1,1 @@
+vagrant -1 vagrant -1 =vagrant /home/vagrant /bin/sh -, Vagrant user
