@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2015.05 Configuration
+# Buildroot 2015.05-g7de0201 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 
@@ -222,23 +222,22 @@ BR2_TARGET_GENERIC_ISSUE="Welcome to Buildroot"
 # BR2_TARGET_GENERIC_PASSWD_SHA256 is not set
 BR2_TARGET_GENERIC_PASSWD_SHA512=y
 BR2_TARGET_GENERIC_PASSWD_METHOD="sha-512"
-BR2_INIT_BUSYBOX=y
+# BR2_INIT_BUSYBOX is not set
 # BR2_INIT_SYSV is not set
-# BR2_INIT_SYSTEMD is not set
+BR2_INIT_SYSTEMD=y
 # BR2_INIT_NONE is not set
-# BR2_ROOTFS_DEVICE_CREATION_STATIC is not set
-BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_DEVTMPFS=y
-# BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_MDEV is not set
-# BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_EUDEV is not set
+
+#
+# /dev management using udev (from systemd)
+#
 BR2_ROOTFS_DEVICE_TABLE="system/device_table.txt"
 BR2_ROOTFS_SKELETON_DEFAULT=y
 # BR2_ROOTFS_SKELETON_CUSTOM is not set
 BR2_TARGET_GENERIC_ROOT_PASSWD=""
 BR2_SYSTEM_BIN_SH_BUSYBOX=y
-
-#
-# bash, dash, zsh need BR2_PACKAGE_BUSYBOX_SHOW_OTHERS
-#
+# BR2_SYSTEM_BIN_SH_BASH is not set
+# BR2_SYSTEM_BIN_SH_DASH is not set
+# BR2_SYSTEM_BIN_SH_ZSH is not set
 # BR2_SYSTEM_BIN_SH_NONE is not set
 BR2_SYSTEM_BIN_SH="/bin/busybox"
 BR2_TARGET_GENERIC_GETTY=y
@@ -259,7 +258,7 @@ BR2_TARGET_GENERIC_GETTY_OPTIONS=""
 BR2_TARGET_GENERIC_REMOUNT_ROOTFS_RW=y
 BR2_SYSTEM_DHCP=""
 # BR2_TARGET_TZ_INFO is not set
-BR2_ROOTFS_USERS_TABLES=""
+BR2_ROOTFS_USERS_TABLES="board/infimum/x86_64/user_table.txt"
 BR2_ROOTFS_OVERLAY=""
 BR2_ROOTFS_POST_BUILD_SCRIPT=""
 BR2_ROOTFS_POST_IMAGE_SCRIPT=""
@@ -274,7 +273,7 @@ BR2_ROOTFS_POST_IMAGE_SCRIPT=""
 #
 BR2_PACKAGE_BUSYBOX=y
 BR2_PACKAGE_BUSYBOX_CONFIG="package/busybox/busybox.config"
-# BR2_PACKAGE_BUSYBOX_SHOW_OTHERS is not set
+BR2_PACKAGE_BUSYBOX_SHOW_OTHERS=y
 # BR2_PACKAGE_BUSYBOX_WATCHDOG is not set
 
 #
@@ -330,6 +329,7 @@ BR2_PACKAGE_MPLAYER_ARCH_SUPPORTS=y
 # Compressors and decompressors
 #
 # BR2_PACKAGE_BZIP2 is not set
+# BR2_PACKAGE_GZIP is not set
 # BR2_PACKAGE_INFOZIP is not set
 # BR2_PACKAGE_LZ4 is not set
 # BR2_PACKAGE_LZIP is not set
@@ -359,6 +359,7 @@ BR2_PACKAGE_GOOGLE_BREAKPAD_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_LATENCYTOP is not set
 # BR2_PACKAGE_LMBENCH is not set
+# BR2_PACKAGE_LSOF is not set
 # BR2_PACKAGE_LTP_TESTSUITE is not set
 # BR2_PACKAGE_LTRACE is not set
 # BR2_PACKAGE_LTTNG_BABELTRACE is not set
@@ -399,20 +400,28 @@ BR2_PACKAGE_GOOGLE_BREAKPAD_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_BINUTILS is not set
 # BR2_PACKAGE_BSDIFF is not set
+# BR2_PACKAGE_BUSTLE is not set
 BR2_PACKAGE_CMAKE_ARCH_SUPPORTS=y
 # BR2_PACKAGE_CMAKE_CTEST is not set
 # BR2_PACKAGE_CPPUNIT is not set
 # BR2_PACKAGE_CVS is not set
+# BR2_PACKAGE_DIFFUTILS is not set
+# BR2_PACKAGE_FINDUTILS is not set
 # BR2_PACKAGE_FLEX is not set
+# BR2_PACKAGE_GAWK is not set
 # BR2_PACKAGE_GETTEXT is not set
 # BR2_PACKAGE_GIT is not set
 # BR2_PACKAGE_GPERF is not set
+# BR2_PACKAGE_GREP is not set
 # BR2_PACKAGE_JQ is not set
 # BR2_PACKAGE_LIBTOOL is not set
 # BR2_PACKAGE_MAKE is not set
+# BR2_PACKAGE_PATCH is not set
 # BR2_PACKAGE_PKGCONF is not set
+# BR2_PACKAGE_SED is not set
 # BR2_PACKAGE_SSTRIP is not set
 # BR2_PACKAGE_SUBVERSION is not set
+# BR2_PACKAGE_TAR is not set
 # BR2_PACKAGE_TREE is not set
 # BR2_PACKAGE_YASM is not set
 
@@ -499,10 +508,6 @@ BR2_PACKAGE_CMAKE_ARCH_SUPPORTS=y
 #
 # glmark2 needs an OpenGL or an openGL ES and EGL backend provided by mesa3d
 #
-
-#
-# glmark2 needs udev /dev management and a toolchain w/ C++, NPTL
-#
 # BR2_PACKAGE_GNUPLOT is not set
 # BR2_PACKAGE_JHEAD is not set
 # BR2_PACKAGE_RRDTOOL is not set
@@ -514,6 +519,7 @@ BR2_PACKAGE_CMAKE_ARCH_SUPPORTS=y
 # BR2_PACKAGE_DIRECTFB is not set
 # BR2_PACKAGE_FBDUMP is not set
 # BR2_PACKAGE_FBGRAB is not set
+# BR2_PACKAGE_FBSET is not set
 # BR2_PACKAGE_FB_TEST_APP is not set
 # BR2_PACKAGE_FBTERM is not set
 # BR2_PACKAGE_FBV is not set
@@ -523,10 +529,7 @@ BR2_PACKAGE_CMAKE_ARCH_SUPPORTS=y
 #
 # linux-fusion needs a Linux kernel to be built
 #
-
-#
-# mesa3d needs udev /dev management and a toolchain w/ C++, NPTL
-#
+# BR2_PACKAGE_MESA3D is not set
 # BR2_PACKAGE_OCRAD is not set
 # BR2_PACKAGE_PSPLASH is not set
 # BR2_PACKAGE_SDL is not set
@@ -538,10 +541,7 @@ BR2_PACKAGE_CMAKE_ARCH_SUPPORTS=y
 # BR2_PACKAGE_QT is not set
 BR2_PACKAGE_QT5_JSCORE_AVAILABLE=y
 # BR2_PACKAGE_QT5 is not set
-
-#
-# weston needs udev and a toolchain w/ threads, dynamic library, headers >= 3.0
-#
+# BR2_PACKAGE_WESTON is not set
 # BR2_PACKAGE_XORG7 is not set
 
 #
@@ -574,21 +574,24 @@ BR2_PACKAGE_QT5_JSCORE_AVAILABLE=y
 # BR2_PACKAGE_ZD1211_FIRMWARE is not set
 # BR2_PACKAGE_ACPID is not set
 # BR2_PACKAGE_AVRDUDE is not set
-
-#
-# bcache-tools needs udev /dev management and a toolchain w/ wchar
-#
+# BR2_PACKAGE_BCACHE_TOOLS is not set
+# BR2_PACKAGE_BIOSDEVNAME is not set
 # BR2_PACKAGE_CC_TOOL is not set
 # BR2_PACKAGE_CDRKIT is not set
 # BR2_PACKAGE_CRYPTSETUP is not set
 # BR2_PACKAGE_CWIID is not set
-# BR2_PACKAGE_DBUS is not set
+BR2_PACKAGE_DBUS=y
+# BR2_PACKAGE_DBUS_CPP is not set
+# BR2_PACKAGE_DBUS_GLIB is not set
+# BR2_PACKAGE_DBUS_TRIGGERD is not set
+# BR2_PACKAGE_DEVMEM2 is not set
 # BR2_PACKAGE_DMIDECODE is not set
 # BR2_PACKAGE_DMRAID is not set
 # BR2_PACKAGE_DTV_SCAN_TABLES is not set
 # BR2_PACKAGE_DVB_APPS is not set
 # BR2_PACKAGE_DVBSNOOP is not set
 # BR2_PACKAGE_EEPROG is not set
+BR2_PACKAGE_PROVIDES_UDEV="systemd"
 
 #
 # eudev needs eudev /dev management
@@ -606,6 +609,7 @@ BR2_PACKAGE_QT5_JSCORE_AVAILABLE=y
 # BR2_PACKAGE_GPSD is not set
 # BR2_PACKAGE_GPTFDISK is not set
 # BR2_PACKAGE_GVFS is not set
+# BR2_PACKAGE_HDPARM is not set
 # BR2_PACKAGE_HWDATA is not set
 # BR2_PACKAGE_HWLOC is not set
 # BR2_PACKAGE_I2C_TOOLS is not set
@@ -664,20 +668,12 @@ BR2_PACKAGE_QT5_JSCORE_AVAILABLE=y
 # BR2_PACKAGE_TI_UTILS is not set
 # BR2_PACKAGE_TRIGGERHAPPY is not set
 # BR2_PACKAGE_UBOOT_TOOLS is not set
-
-#
-# udisks needs udev /dev management
-#
+BR2_PACKAGE_HAS_UDEV=y
+# BR2_PACKAGE_UDISKS is not set
 # BR2_PACKAGE_USB_MODESWITCH is not set
 # BR2_PACKAGE_USB_MODESWITCH_DATA is not set
-
-#
-# usbmount requires udev to be enabled
-#
-
-#
-# usbutils needs udev /dev management and toolchain w/ threads
-#
+# BR2_PACKAGE_USBMOUNT is not set
+# BR2_PACKAGE_USBUTILS is not set
 # BR2_PACKAGE_W_SCAN is not set
 # BR2_PACKAGE_WIPE is not set
 # BR2_PACKAGE_XORRISO is not set
@@ -752,7 +748,7 @@ BR2_PACKAGE_MONO_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LZO is not set
 # BR2_PACKAGE_SNAPPY is not set
 # BR2_PACKAGE_SZIP is not set
-# BR2_PACKAGE_ZLIB is not set
+BR2_PACKAGE_ZLIB=y
 
 #
 # Crypto
@@ -778,7 +774,9 @@ BR2_PACKAGE_BOTAN_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LIBSHA1 is not set
 # BR2_PACKAGE_LIBSSH2 is not set
 # BR2_PACKAGE_NETTLE is not set
-# BR2_PACKAGE_OPENSSL is not set
+BR2_PACKAGE_OPENSSL=y
+# BR2_PACKAGE_OPENSSL_BIN is not set
+# BR2_PACKAGE_OPENSSL_ENGINES is not set
 # BR2_PACKAGE_POLARSSL is not set
 
 #
@@ -873,26 +871,17 @@ BR2_PACKAGE_WEBKIT_ARCH_SUPPORTS=y
 # BR2_PACKAGE_GNU_EFI is not set
 # BR2_PACKAGE_LCDAPI is not set
 # BR2_PACKAGE_LIBAIO is not set
-
-#
-# libatasmart requires udev to be enabled
-#
+# BR2_PACKAGE_LIBATASMART is not set
 # BR2_PACKAGE_LIBCEC is not set
 # BR2_PACKAGE_LIBFREEFARE is not set
 # BR2_PACKAGE_LIBFTDI is not set
 # BR2_PACKAGE_LIBFTDI1 is not set
 # BR2_PACKAGE_LIBHID is not set
 # BR2_PACKAGE_LIBIIO is not set
-
-#
-# libinput needs udev /dev management
-#
+# BR2_PACKAGE_LIBINPUT is not set
 # BR2_PACKAGE_LIBIQRF is not set
 # BR2_PACKAGE_LIBLLCP is not set
-
-#
-# libmbim needs udev /dev management and a toolchain w/ wchar, threads
-#
+# BR2_PACKAGE_LIBMBIM is not set
 # BR2_PACKAGE_LIBNFC is not set
 # BR2_PACKAGE_LIBPCIACCESS is not set
 # BR2_PACKAGE_LIBPHIDGET is not set
@@ -933,7 +922,7 @@ BR2_PACKAGE_WEBKIT_ARCH_SUPPORTS=y
 #
 # BR2_PACKAGE_BENEJSON is not set
 # BR2_PACKAGE_CJSON is not set
-# BR2_PACKAGE_EXPAT is not set
+BR2_PACKAGE_EXPAT=y
 # BR2_PACKAGE_EZXML is not set
 # BR2_PACKAGE_JANSSON is not set
 # BR2_PACKAGE_JSON_C is not set
@@ -1086,7 +1075,8 @@ BR2_PACKAGE_LIBATOMIC_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LIBATOMIC_OPS is not set
 BR2_PACKAGE_LIBBSD_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LIBBSD is not set
-# BR2_PACKAGE_LIBCAP is not set
+BR2_PACKAGE_LIBCAP=y
+# BR2_PACKAGE_LIBCAP_TOOLS is not set
 # BR2_PACKAGE_LIBCAP_NG is not set
 # BR2_PACKAGE_LIBCGROUP is not set
 # BR2_PACKAGE_LIBDAEMON is not set
@@ -1149,7 +1139,12 @@ BR2_PACKAGE_LIBNSPR_ARCH_SUPPORT=y
 # BR2_PACKAGE_LIBFRIBIDI is not set
 # BR2_PACKAGE_LIBUNISTRING is not set
 # BR2_PACKAGE_LINENOISE is not set
-# BR2_PACKAGE_NCURSES is not set
+BR2_PACKAGE_NCURSES=y
+# BR2_PACKAGE_NCURSES_WCHAR is not set
+# BR2_PACKAGE_NCURSES_TARGET_PANEL is not set
+# BR2_PACKAGE_NCURSES_TARGET_FORM is not set
+# BR2_PACKAGE_NCURSES_TARGET_MENU is not set
+# BR2_PACKAGE_NCURSES_TARGET_PROGS is not set
 # BR2_PACKAGE_NEWT is not set
 # BR2_PACKAGE_PCRE is not set
 # BR2_PACKAGE_POPT is not set
@@ -1197,6 +1192,7 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_ARGUS is not set
 # BR2_PACKAGE_ARPTABLES is not set
 # BR2_PACKAGE_ATFTP is not set
+# BR2_PACKAGE_AUTOSSH is not set
 # BR2_PACKAGE_AVAHI is not set
 # BR2_PACKAGE_AXEL is not set
 # BR2_PACKAGE_BANDWIDTHD is not set
@@ -1216,6 +1212,7 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_CONNTRACK_TOOLS is not set
 # BR2_PACKAGE_CRDA is not set
 # BR2_PACKAGE_CTORRENT is not set
+# BR2_PACKAGE_DHCP is not set
 # BR2_PACKAGE_DHCPCD is not set
 # BR2_PACKAGE_DHCPDUMP is not set
 # BR2_PACKAGE_DNSMASQ is not set
@@ -1234,7 +1231,9 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_HIAWATHA is not set
 # BR2_PACKAGE_HOSTAPD is not set
 # BR2_PACKAGE_HTTPING is not set
+# BR2_PACKAGE_IFPLUGD is not set
 # BR2_PACKAGE_IFTOP is not set
+# BR2_PACKAGE_IFUPDOWN is not set
 
 #
 # igh-ethercat needs a Linux kernel to be built
@@ -1267,10 +1266,7 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_MII_DIAG is not set
 # BR2_PACKAGE_MINIDLNA is not set
 # BR2_PACKAGE_MJPG_STREAMER is not set
-
-#
-# modemmanager needs udev /dev management and a toolchain w/ wchar, threads
-#
+# BR2_PACKAGE_MODEM_MANAGER is not set
 # BR2_PACKAGE_MONGOOSE is not set
 # BR2_PACKAGE_MONGREL2 is not set
 # BR2_PACKAGE_MOSQUITTO is not set
@@ -1280,13 +1276,13 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_NCFTP is not set
 # BR2_PACKAGE_NDISC6 is not set
 # BR2_PACKAGE_NETATALK is not set
+# BR2_PACKAGE_NETCAT is not set
+# BR2_PACKAGE_NETCAT_OPENBSD is not set
 # BR2_PACKAGE_NETPLUG is not set
 # BR2_PACKAGE_NETSNMP is not set
 # BR2_PACKAGE_NETSTAT_NAT is not set
-
-#
-# NetworkManager needs udev /dev management and a (e)glibc toolchain w/ headers >= 3.7
-#
+# BR2_PACKAGE_NET_TOOLS is not set
+# BR2_PACKAGE_NETWORK_MANAGER is not set
 # BR2_PACKAGE_NFACCT is not set
 # BR2_PACKAGE_NFTABLES is not set
 # BR2_PACKAGE_NGINX is not set
@@ -1302,7 +1298,7 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_OPEN_PLC_UTILS is not set
 # BR2_PACKAGE_OPENNTPD is not set
 # BR2_PACKAGE_OPENOBEX is not set
-# BR2_PACKAGE_OPENSSH is not set
+BR2_PACKAGE_OPENSSH=y
 # BR2_PACKAGE_OPENSWAN is not set
 # BR2_PACKAGE_OPENVPN is not set
 # BR2_PACKAGE_P910ND is not set
@@ -1343,6 +1339,7 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_TCPDUMP is not set
 # BR2_PACKAGE_TCPING is not set
 # BR2_PACKAGE_TCPREPLAY is not set
+# BR2_PACKAGE_TFTPD is not set
 # BR2_PACKAGE_THTTPD is not set
 # BR2_PACKAGE_TINC is not set
 # BR2_PACKAGE_TINYHTTPD is not set
@@ -1358,6 +1355,8 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_VPNC is not set
 # BR2_PACKAGE_VSFTPD is not set
 # BR2_PACKAGE_VTUN is not set
+# BR2_PACKAGE_WGET is not set
+# BR2_PACKAGE_WHOIS is not set
 # BR2_PACKAGE_WIRELESS_REGDB is not set
 # BR2_PACKAGE_WIRELESS_TOOLS is not set
 # BR2_PACKAGE_WIRESHARK is not set
@@ -1376,6 +1375,7 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 #
 # BR2_PACKAGE_IPKG is not set
 # BR2_PACKAGE_OPKG is not set
+# BR2_PACKAGE_RPM is not set
 
 #
 # Real-Time
@@ -1389,6 +1389,9 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 #
 # Shells
 #
+# BR2_PACKAGE_BASH is not set
+# BR2_PACKAGE_DASH is not set
+# BR2_PACKAGE_ZSH is not set
 
 #
 # Utilities
@@ -1407,7 +1410,9 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_PINENTRY is not set
 # BR2_PACKAGE_SCREEN is not set
 # BR2_PACKAGE_SUDO is not set
+# BR2_PACKAGE_TIME is not set
 # BR2_PACKAGE_TMUX is not set
+# BR2_PACKAGE_WHICH is not set
 # BR2_PACKAGE_XMLSTARLET is not set
 
 #
@@ -1415,7 +1420,11 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 #
 # BR2_PACKAGE_ACL is not set
 # BR2_PACKAGE_ATTR is not set
+# BR2_PACKAGE_BOOTUTILS is not set
+# BR2_PACKAGE_COREUTILS is not set
 # BR2_PACKAGE_CPULOAD is not set
+# BR2_PACKAGE_DCRON is not set
+# BR2_PACKAGE_DEBIANUTILS is not set
 # BR2_PACKAGE_FTOP is not set
 # BR2_PACKAGE_GETENT is not set
 # BR2_PACKAGE_HTOP is not set
@@ -1426,7 +1435,8 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_IPRUTILS is not set
 # BR2_PACKAGE_IRQBALANCE is not set
 # BR2_PACKAGE_KEYUTILS is not set
-# BR2_PACKAGE_KMOD is not set
+BR2_PACKAGE_KMOD=y
+BR2_PACKAGE_KMOD_TOOLS=y
 # BR2_PACKAGE_LXC is not set
 # BR2_PACKAGE_MONIT is not set
 # BR2_PACKAGE_NCDU is not set
@@ -1434,24 +1444,43 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_NUT is not set
 # BR2_PACKAGE_OPENVMTOOLS is not set
 # BR2_PACKAGE_POLKIT is not set
+# BR2_PACKAGE_PROCPS_NG is not set
+# BR2_PACKAGE_PSMISC is not set
 # BR2_PACKAGE_PWGEN is not set
 # BR2_PACKAGE_QUOTA is not set
+# BR2_PACKAGE_RSYSLOG is not set
 # BR2_PACKAGE_SMACK is not set
+# BR2_PACKAGE_START_STOP_DAEMON is not set
 
 #
 # supervisor needs the python interpreter
 #
+# BR2_PACKAGE_SYSKLOGD is not set
 BR2_PACKAGE_SYSTEMD_ARCH_SUPPORTS=y
-# BR2_PACKAGE_UTIL_LINUX is not set
+BR2_PACKAGE_SYSTEMD=y
+# BR2_PACKAGE_SYSTEMD_ALL_EXTRAS is not set
+# BR2_PACKAGE_SYSTEMD_JOURNAL_GATEWAY is not set
+# BR2_PACKAGE_SYSTEMD_NETWORKD is not set
+BR2_PACKAGE_SYSTEMD_COMPAT=y
+# BR2_PACKAGE_SYSTEMD_SMACK_SUPPORT is not set
+BR2_PACKAGE_UTIL_LINUX=y
+BR2_PACKAGE_UTIL_LINUX_LIBBLKID=y
+BR2_PACKAGE_UTIL_LINUX_LIBMOUNT=y
+# BR2_PACKAGE_UTIL_LINUX_LIBSMARTCOLS is not set
+BR2_PACKAGE_UTIL_LINUX_LIBUUID=y
+# BR2_PACKAGE_UTIL_LINUX_BINARIES is not set
 
 #
 # Text editors and viewers
 #
 # BR2_PACKAGE_ED is not set
 # BR2_PACKAGE_JOE is not set
+# BR2_PACKAGE_LESS is not set
 # BR2_PACKAGE_MC is not set
 # BR2_PACKAGE_NANO is not set
 # BR2_PACKAGE_UEMACS is not set
+BR2_PACKAGE_VIM=y
+BR2_PACKAGE_VIM_RUNTIME=y
 
 #
 # Filesystem images
