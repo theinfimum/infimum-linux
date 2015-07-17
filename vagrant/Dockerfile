@@ -12,6 +12,7 @@ VOLUME ["/vagrant"]
 
 #RUN echo "vagrant ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
+#RUN echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 RUN echo "UseDNS no" >> /etc/ssh/sshd_config
 
 USER vagrant
