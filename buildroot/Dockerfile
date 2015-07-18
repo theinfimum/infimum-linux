@@ -4,7 +4,8 @@ FROM fedora-updated
 MAINTAINER Justin Towson <justin@theinfimum.org>
 
 RUN dnf -y install bc bison bzip2 cpio cvs file findutils flex gcc gcc-c++ git kernel-devel make mercurial patch perl-ExtUtils-MakeMaker perl-Thread-Queue rsync subversion tar texinfo unzip wget which
-RUN dnf -y install glibc-devel.i686 libstdc++-devel.i686
+RUN dnf -y install ncurses-devel
+#RUN dnf -y install glibc-devel.i686 libstdc++-devel.i686
 
 ENV BUILDROOT_VERSION=2015.05
 
@@ -14,16 +15,19 @@ RUN curl http://buildroot.uclibc.org/downloads/buildroot-2015.05.tar.bz2 | tar -
 
 WORKDIR buildroot-2015.05
 
-#VOLUME ["/root/.buildroot-ccache"]
-COPY cache/ /root/
-RUN mkdir -p board/x86_64/patches/kernel
+ADD overlay/ .
 
-COPY buildroot.config .config
+VOLUME ["/root/.buildroot-ccache"]
 
-COPY kernel.config board/x86_64/kernel.config
-RUN make source
+RUN make infimum_uclibc_defconfig
 
-RUN make
+#RUN make x86_64_glibc_defconfig
+#RUN cp -v configs/x86_64_glibc_defconfig .config
+
+#COPY kernel.config board/x86_64/kernel.config
+#RUN make source
+
+#RUN make
 
 
 #COPY buildroot.config .config
