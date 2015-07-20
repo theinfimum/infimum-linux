@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
   #  libvirt.driver = "kvm"
   #end
 
-  config.ssh.shell = "/bin/bash"
+  config.ssh.shell = "/bin/sh"
   
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

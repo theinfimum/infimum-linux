@@ -39,3 +39,5 @@ RUN make source
 #COPY kernel.config board/x86_64/kernel.config
 
 #VOLUME ["/mnt"]
+
+CMD ["make"]
