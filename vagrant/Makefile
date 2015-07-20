@@ -1,6 +1,6 @@
 all: docker-build
 
 docker-build:
-	docker build -t infimum-vagrant .
+	docker build -t infimum-linux:vagrant .
 docker-run:
-	docker run -it infimum-vagrant /bin/sh
+	docker run -it infimum-linux:vagrant /bin/sh

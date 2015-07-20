@@ -1,4 +1,4 @@
-FROM infimum-uclibc-aleph
+FROM theinfimum/infimum-linux:aleph-uclibc
 MAINTAINER Justin Towson <justin@theinfimum.org>
 
 VOLUME ["/vagrant"]
@@ -10,6 +10,8 @@ RUN chmod 600 /etc/ssh/ssh_host_rsa_key
 
 #RUN echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 RUN echo "UseDNS no" >> /etc/ssh/sshd_config
+
+RUN useradd vagrant
 
 USER vagrant
 

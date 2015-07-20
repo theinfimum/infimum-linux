@@ -14,7 +14,7 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   
   config.vm.provider "docker" do |d|
-    d.build_dir = "."
+    d.build_dir = "vagrant"
   	d.has_ssh = true
   end
   #config.vm.box="fedora"
@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
   #  libvirt.driver = "kvm"
   #end
 
-  config.ssh.shell = "/bin/sh"
+  config.ssh.shell = "/bin/bash"
   
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
